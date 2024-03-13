@@ -1,0 +1,165 @@
+﻿@using WebsiteBanDienThoai.Models
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/css/dathang.css" />
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>   
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   
+   
+
+
+
+
+
+
+
+<div class="body">
+<div class="card">
+    <div class="card-top border-bottom text-center">
+       @* <a href="#">Trở lại trang chủ</a>*@
+        <span id="logo">Thanh toán</span>
+    </div>
+    <div class="card-body">
+        <div class="row upper">
+            <span style="font-size:15px;"><i class="fa fa-check-circle-o"></i>Mua hàng</span>
+            <span style="font-size:15px;"><i class="fa fa-check-circle-o"></i>Đặt hàng</span>
+            <span id="payment"><span id="three">3</span>Thanh toán</span>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="left border">
+                    <div class="row">
+                        <span class="header">Thông tin khách hàng</span>
+                      @*  <div class="icons">
+                            <img src="https://img.icons8.com/color/48/000000/visa.png" />
+                            <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
+                            <img src="https://img.icons8.com/color/48/000000/maestro.png" />
+                        </div>*@
+                    </div>
+                    <div class="form">
+
+
+                        @{
+                            KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+                        }
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.ValidationSummary(true)
+
+                            <span>Họ tên:</span>
+                            <input value="@kh.HoTen" />
+
+                            <span>Điện thoại:</span>
+                            <input value="@kh.DienThoai" />
+
+                            <span>Địa chỉ:</span>
+                            <input value="@kh.DiaChi" />
+
+
+                            <div id="row1" class="row">
+                                <div class="col-4">
+                                    <span>Ngày đặt hàng:</span>
+                                    <input id="cvv" value="@DateTime.Now.ToShortDateString()" />
+                                </div>
+                                <div class="col-4">
+                                    <span>Ngày giao:</span>
+                                    <input id="cvv" type="date" name="NgayGiao" />
+                                </div>
+                            </div>
+
+
+
+                          @*  <p><b>@kh.HoTen (+84)@kh.DienThoai</b> &nbsp;&nbsp;&nbsp;   @kh.DiaChi</p>
+                            <h4 style="color:red"><i class='fas fa-truck' style='font-size:15px;color:red'></i> Ngày Nhận Hàng</h4>
+                            <p>@DateTime.Now.ToShortDateString() - <input type="date" name="NgayGiao" /></p>
+                            <hr>
+                            <p style="text-align:right; font-size:20px; color:red">
+                                <b>Tổng thanh toán:</b>  @string.Format("{0:#,##0}", ViewBag.TongTien) VNĐ
+
+                            </p>
+
+                            <input class="button" value="@kh.HoTen" />*@
+                            <hr>
+                            <div id="dh1">
+                                <a href="/GioHang/PaymentWithPayPal?" class="btn btn-success">Thanh toán bằng paypal </a>
+                                <input class="button" type="submit" value="ĐẶT HÀNG (Ship COD)" />
+
+                            </div>
+                           
+
+
+                        }
+
+                        @*<input type="checkbox" id="save_card" class="align-left">
+        <label for="save_card">Save card details to wallet</label>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="right border">
+                    <div class="header1">Đơn đặt hàng</div>
+                    @* <p>2 items</p>*@
+
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="row item">
+                            <div class="col-4 align-self-center"><img class="img-fluid" src="~/Images/@item.sAnhBia"></div>
+                            @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { iMaSP = item.iMaSP }))
+                            {
+                                <div class="col-8">
+                                    <div id="ddh" class="row"><b>@string.Format("{0:#,##0,0}", @item.dDonGia)đ</b></div>
+                                    <div id="ddh" class="row text-muted"> <a href="@Url.Action("ChiTietSP", "BanDienThoai", new { id = item.iMaSP })">@item.sTenSP</a></div>
+                                    <div id="ddh" class="row">SL: @item.iSoLuong</div>
+                                </div>
+
+
+
+                            }
+                        </div>
+
+                    }
+
+
+
+
+
+                    <hr>
+
+                   
+
+                    <div class="row lower">
+                        <div id="dd" class="col text-left">Tổng số lượng</div>
+                        <div id="dd" class="col text-right"> @string.Format("{0:#,##0}", ViewBag.TongSoLuong)</div>
+                    </div>
+                    <div class="row lower">
+                        <div id="dd" class="col text-left">Phí vận chuyển</div>
+                        <div id="dd" class="col text-right">0đ</div>
+                    </div>
+                    <div class="row lower">
+                        <div id="dd" class="col text-left"><b>Tổng</b></div>
+                        <div id="dd" class="col text-right"><b> @string.Format("{0:#,##0}", ViewBag.TongTien)đ</b></div>
+                    </div>
+
+                   
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+    </div>
+</div>
+
+
+
+</div>

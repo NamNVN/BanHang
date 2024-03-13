@@ -1,0 +1,112 @@
+﻿@model IEnumerable<WebsiteBanDienThoai.Models.KHUYENMAI>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin1.cshtml";
+}
+
+<style type="text/css">
+    .btnwarning {
+        background-size: auto;
+        background-color: #fbdd35;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btndanger {
+        background-size: auto;
+        background-color: #ff4040;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btnprimary {
+        background-size: auto;
+        background-color: #0094ff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btnadd {
+        background-color: LightSalmon;
+        color: white;
+        padding: 8px 17px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+
+    .container a {
+        text-decoration:none;
+        color:white;
+    }
+    
+</style>
+<h2 style="text-align:center;">QUẢN LÝ KHUYẾN MÃI</h2>
+<div class="container">
+    <p>
+        <a href="@Url.Action("Create")" class="btnadd" role="button">Tạo mới</a>
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Mã sản phẩm
+            </th>
+            <th>
+                Mô tả
+            </th>
+            <th>
+                Giá bán
+            </th>
+            <th>
+                Phần trăm
+            </th>
+            <th>
+                Ngày bắt đầu
+            </th>
+            <th>
+                Ngày kết thúc
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.MaSP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaBan)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.PhanTram)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayBD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayKT)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = item.MaSP })" class="btn btnwarning" role="button">Sửa</a>
+                    @*<a href="@Url.Action("Details", new { id = item.MaSP })" class="btn btnprimary" role="button">Chi tiết</a>*@
+                    <a href="@Url.Action("Delete", new { id = item.MaSP })" class="btn btndanger" role="button">Xóa</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

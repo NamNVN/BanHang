@@ -1,0 +1,230 @@
+﻿.body {
+   /* min-height: 100vh;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: 0.8rem;
+}
+
+
+
+.body .card {
+    max-width: 1000px;
+    margin: 2vh;
+}
+
+.body .card-top {
+    padding: 0.7rem 5rem;
+}
+
+ .body   .card-top a {
+        float: left;
+        margin-top: 0.7rem;
+    }
+
+#logo {
+    font-family: 'Dancing Script';
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.body .card-body {
+    padding: 0 5rem 5rem 5rem;
+    background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media(max-width:768px) {
+   .body .card-body {
+        padding: 0 1rem 1rem 1rem;
+        background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+   .body .card-top {
+        padding: 0.7rem 1rem;
+    }
+}
+
+.body .row {
+    margin: 0;
+  
+    
+}
+
+.body #row1 {
+    padding-left:15px;
+}
+
+
+#ddh {
+    font-size:12px;
+    
+}
+
+#dd  {
+    font-size: 15px;
+}
+
+#dh1 a{
+    font-size:13px;
+}
+
+.btn-success {
+    font-size:13px;
+}
+
+#ddh a {
+    text-decoration: none;
+    color: orange;
+}
+
+.body .upper {
+    padding: 1rem 0;
+    justify-content: space-evenly;
+}
+
+#three {
+    border-radius: 1rem;
+    width: 22px;
+    height: 22px;
+    margin-right: 3px;
+    border: 1px solid blue;
+    text-align: center;
+    display: inline-block;
+}
+
+#payment {
+    margin: 0;
+    color: blue;
+    font-size:15px;
+}
+
+.body .icons {
+    margin-left: auto;
+}
+
+.body .form span {
+    color: rgb(179, 179, 179);
+}
+
+.body .form {
+    padding: 1vh 0;
+    
+    font-size:1.5rem;
+    
+}
+
+.body input {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+
+ .body   input:focus::-webkit-input-placeholder {
+        color: transparent;
+    }
+
+.card .header {
+    font-size: 2rem;
+    margin-left:15px;
+}
+
+.card .header1 {
+    font-size: 2rem;
+    background:white;
+    color:black;
+    
+
+}
+
+.body .left {
+    background-color: #ffffff;
+    padding: 2vh;
+}
+
+.body    .left img {
+        width: 2rem;
+    }
+
+ .body   .left .col-4 {
+        padding-left: 0;
+    }
+
+.body .right .item {
+    padding: 0.3rem 0;
+}
+
+.body .right {
+    background-color: #ffffff;
+    padding: 2vh;
+}
+
+.body .col-8 {
+    padding: 0 1vh;
+}
+
+.body .lower {
+    line-height: 2;
+}
+
+.body .btn {
+    background-color: rgb(23, 4, 189);
+    border-color: rgb(23, 4, 189);
+    color: white;
+    width: 100%;
+    font-size: 0.7rem;
+    margin: 4vh 0 1.5vh 0;
+    padding: 1.5vh;
+    border-radius: 0;
+}
+
+.body    .btn:focus {
+        box-shadow: none;
+        outline: none;
+        box-shadow: none;
+        color: white;
+        -webkit-box-shadow: none;
+        -webkit-user-select: none;
+        transition: none;
+    }
+
+.body    .btn:hover {
+        color: white;
+    }
+
+.body a {
+    color: black;
+}
+
+.body    a:hover {
+        color: black;
+        text-decoration: none;
+    }
+
+.body input[type=checkbox] {
+    width: unset;
+    margin-bottom: unset;
+}
+
+/*#cvv {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.575), rgba(255, 255, 255, 0.541)), url("https://img.icons8.com/material-outlined/24/000000/help.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center;
+}*/
+
+ .body   #cvv:hover {
+    }
+
+
+.body .button {
+    background-color:#e97e31;
+}
+

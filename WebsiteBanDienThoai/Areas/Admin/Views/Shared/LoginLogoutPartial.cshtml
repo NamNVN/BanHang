@@ -1,0 +1,46 @@
+﻿@using WebsiteBanDienThoai.Models
+@{
+    ADMIN kh = (ADMIN)Session["TenDN"];
+}
+
+<style>
+    li a span.glyphicon-user{
+        padding-left:10px;
+    }
+
+    li a span.glyphicon-log-in {
+        padding-left: 10px;
+    }
+</style>
+
+@if (Session["TenDN"] == null) //Giao diện đăng nhập
+{
+   @* <li>
+        <a href="~/User/DangKy">
+            <span class="glyphicon glyphicon-user"></span>
+            Đăng ký
+        </a>
+    </li>*@
+    <li>
+        <a href="~/Areas/Admin/Views/Home/Login.cshtml">
+           @* <span class="glyphicon glyphicon-log-in"></span>*@
+            <span class="glyphicon glyphicon-user"></span>
+
+        </a>
+    </li>
+}
+else //Giao diện logout
+{
+    <li>
+        <a href="@Url.Action("Index","Home")">
+            <span class="glyphicon glyphicon-user"></span>
+             @kh.TenDN
+        </a>
+    </li>
+    <li>
+        <a href="@Url.Action("DangXuat","Home")">
+            <span class="glyphicon glyphicon-log-out"></span>
+            
+        </a>
+    </li>
+}

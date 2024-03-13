@@ -1,0 +1,554 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/fontawesome-free-5.12.0-web/css/all.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <link rel="icon" type="image/x-icon" href="~/Images/imges/messi.png">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="~/Content/css/header3.css" />
+
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <!--đăng nhập-->
+   
+
+
+
+
+
+
+    <style type="text/css">
+        .than1 {
+            padding-top: 180px;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <nav>
+
+        <div class="header1">
+            <marquee direction="up" scrollamount="10" scrolldelay="1000" onMouseMove="stop()" onMouseOut="start()" height="30px">
+                <p>Miễn phí giao hàng trên 1.200.000 VNĐ  <i class="fa fa-caret-down"></i></p>
+                <p></p>
+                <p>Trả hàng dễ dàng  <i class="fa fa-caret-down"></i></p>
+
+            </marquee>
+        </div>
+
+
+
+
+
+        <div class="topnav">
+            <a href="#home"><img src="~/Images/imges/adidas.png" /></a>
+            <a href="#news"><img src="~/Images/imges/puma.png" /></a>
+            <a href="#contact"><img src="~/Images/imges/Mens Under Armour Size Chart.png" /></a>
+            <a href="#contact"><img src="~/Images/imges/New Balance Vector Logo.png" /></a>
+            <a href="#contact"><img src="~/Images/imges/Nike decide deixar de vender seus produtos na Amazon.png" /></a>
+            <a href="#"><img src="~/Images/convers.png" /></a>
+
+
+            <div class="topnav-right" id="topnav-right">
+
+                <a href="#">Chính sách</a>
+              
+
+            </div>
+            <div class="topnav-right" id="topnav-right">
+
+                <a href="#search">Trợ giúp</a>
+
+            </div>
+            <div class="topnav-right">
+
+                <a href="~/User/DangKy">Đăng kí</a>
+
+
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="logo"><a href="~/BanDienThoai/TrangChu"><img src="~/Images/imges/messi.png" />NVN</a></div>
+                <input type="radio" name="slider" id="menu-btn">
+                <input type="radio" name="slider" id="close-btn">
+                <ul class="nav-links">
+                    <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                    <!--<li><a href="#">NAM</a></li>
+    <li><a href="#">NỮ</a></li>-->
+                    <!--<-->@*li>
+        <a href="#" class="desktop-item">
+            Dropdown Menu
+            <i class="fa fa-caret-down"></i>
+        </a>*@
+                    <input type="checkbox" id="showDrop">
+                    @*                  <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+            <ul class="drop-menu">
+                <li><a href="#">Drop menu 1</a></li>
+                <li><a href="#">Drop menu 2</a></li>
+                <li><a href="#">Drop menu 3</a></li>
+                <li><a href="#">Drop menu 4</a></li>
+            </ul>
+        </li>*@
+                    <li>
+                        <a href="#" class="desktop-item">
+                            NAM
+
+                        </a>
+
+                        <label for="showMega" class="mobile-item">Mega Menu</label>
+                        <div class="mega-box">
+                            <div class="content">
+                                <div class="row">
+
+                                    <header style="margin:0px 20px;">HÃNG NỔI BẬT</header>
+                                    <ul class="mega-links">
+                                        <li>
+                                            <a href="#"><img src="~/Images/imges/adidas.png" alt="">ADIDAS</a>
+                                            <a href="#"><img src="~/Images/imges/New Balance Vector Logo.png" alt="">NEW BALANCE</a>
+                                            <a href="#"><img src="~/Images/imges/Nike decide deixar de vender seus produtos na Amazon.png" alt="">NIKE</a>
+                                            <a href="#"><img src="~/Images/imges/puma.png" alt="">PUMA</a>
+                                            <a href="#"><img src="~/Images/imges/Mens Under Armour Size Chart.png" alt="">UNDER ARMOUR</a>
+                                            <a href="#"><img src="~/Images/convers.png" alt="">CONVERS</a>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+                                <div class="row">
+                                    <header>QUẦN ÁO</header>
+                                    <ul class="mega-links">
+                                        @Html.Action("DanhMucPartial", "BanDienThoai")
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <header>GIÀY</header>
+                                    <ul class="mega-links">
+                                        @Html.Action("DanhMuc1Partial", "BanDienThoai")
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <header>PHỤ KIỆN</header>
+                                    <ul class="mega-links">
+                                        @Html.Action("DanhMuc2Partial", "BanDienThoai")
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </li>
+                    <li>
+                        <a href="#" class="desktop-item">
+                            NỮ
+
+                        </a>
+
+                        <label for="showMega" class="mobile-item">Mega Menu</label>
+                        <div class="mega-box">
+                            <div class="content">
+                                <div class="row">
+                                    <header style="margin:0px 20px;">HÃNG NỔI BẬT</header>
+                                    <ul class="mega-links">
+                                        <li>
+                                            <a href="#"><img src="~/Images/imges/adidas.png" alt="">ADIDAS</a>
+                                            <a href="#"><img src="~/Images/imges/New Balance Vector Logo.png" alt="">NEW BALANCE</a>
+                                            <a href="#"><img src="~/Images/imges/Nike decide deixar de vender seus produtos na Amazon.png" alt="">NIKE</a>
+                                            <a href="#"><img src="~/Images/imges/puma.png" alt="">PUMA</a>
+                                            <a href="#"><img src="~/Images/imges/Mens Under Armour Size Chart.png" alt="">UNDER ARMOUR</a>
+                                            <a href="#"><img src="~/Images/convers.png" alt="">CONVERS</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <header>QUẦN ÁO</header>
+                                    <ul class="mega-links">
+                                        @Html.Action("DanhMuc3Partial", "BanDienThoai")
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <header>GIÀY</header>
+                                    <ul class="mega-links">
+                                        @Html.Action("DanhMuc4Partial", "BanDienThoai")
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <header>PHỤ KIỆN</header>
+                                    <ul class="mega-links">
+                                        @Html.Action("DanhMuc5Partial", "BanDienThoai")
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </li>
+
+
+
+
+                    <li>
+                        <a href="#" class="desktop-item">
+                            THỂ THAO
+
+                        </a>
+
+                        <label for="showMega" class="mobile-item">Mega Menu</label>
+                        @* <div class="mega-box">
+                <div class="content">
+                    <div class="row">
+                        <h3 style="text-align:center;">Hãng nổi bật</h3>
+                        <a href="#"><img src="~/Images/imges/adidas.png" alt="">ADIDAS</a>
+                        <a href="#"><img src="~/Images/imges/New Balance Vector Logo.png" alt="">NEW BALANCE</a>
+                        <a href="#"><img src="~/Images/imges/Nike decide deixar de vender seus produtos na Amazon.png" alt="">NIKE</a>
+                        <a href="#"><img src="~/Images/imges/puma.png" alt="">PUMA</a>
+                        <a href="#"><img src="~/Images/imges/Mens Under Armour Size Chart.png" alt="">UNDER ARMOUR</a>
+                    </div>
+                    <div class="row">
+                        <header>GIÀY</header>
+                        <ul class="mega-links">
+                            <li><a href="#">Graphics</a></li>
+                            <li><a href="#">Vectors</a></li>
+                            <li><a href="#">Business cards</a></li>
+                            <li><a href="#">Custom logo</a></li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <header>QUẦN ÁO</header>
+                        <ul class="mega-links">
+                            <li><a href="#">Personal Email</a></li>
+                            <li><a href="#">Business Email</a></li>
+                            <li><a href="#">Mobile Email</a></li>
+                            <li><a href="#">Web Marketing</a></li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <header>PHỤ KIỆN</header>
+                        <ul class="mega-links">
+                            <li><a href="#">Site Seal</a></li>
+                            <li><a href="#">VPS Hosting</a></li>
+                            <li><a href="#">Privacy Seal</a></li>
+                            <li><a href="#">Website design</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>*@
+
+
+
+                    </li>
+
+                    <li>
+                        <a href="#" class="desktop-item">
+
+                            SẮP & MỚI RA MẮT
+                        </a>
+                        <input type="checkbox" id="showMega">
+                        <label for="showMega" class="mobile-item">Mega Menu</label>
+                        @*<div class="mega-box">
+                <div class="content">
+                    <div class="row">
+                        <h3 style="text-align:center;">Hãng nổi bật</h3>
+                        <a href="#"><img src="~/Images/imges/adidas.png" alt="">ADIDAS</a>
+                        <a href="#"><img src="~/Images/imges/New Balance Vector Logo.png" alt="">NEW BALANCE</a>
+                        <a href="#"><img src="~/Images/imges/Nike decide deixar de vender seus produtos na Amazon.png" alt="">NIKE</a>
+                        <a href="#"><img src="~/Images/imges/puma.png" alt="">PUMA</a>
+                        <a href="#"><img src="~/Images/imges/Mens Under Armour Size Chart.png" alt="">UNDER ARMOUR</a>
+                    </div>
+                    <div class="row">
+                        <header>Design Services</header>
+                        <ul class="mega-links">
+                            <li><a href="#">Graphics</a></li>
+                            <li><a href="#">Vectors</a></li>
+                            <li><a href="#">Business cards</a></li>
+                            <li><a href="#">Custom logo</a></li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <header>Email Services</header>
+                        <ul class="mega-links">
+                            <li><a href="#">Personal Email</a></li>
+                            <li><a href="#">Business Email</a></li>
+                            <li><a href="#">Mobile Email</a></li>
+                            <li><a href="#">Web Marketing</a></li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <header>Security services</header>
+                        <ul class="mega-links">
+                            <li><a href="#">Site Seal</a></li>
+                            <li><a href="#">VPS Hosting</a></li>
+                            <li><a href="#">Privacy Seal</a></li>
+                            <li><a href="#">Website design</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>*@
+
+
+
+                    </li>
+
+                    <li>
+                        <a href="#" class="desktop-item">
+                            CÁC NHÃN HIỆU
+                          @*  <i class="fa fa-caret-down"></i>*@
+                        </a>
+                        <input type="checkbox" id="showDrop">
+                        <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+                        <ul class="drop-menu">
+                            @*<li><a href="#">Drop menu 1</a></li>
+                            <li><a href="#">Drop menu 2</a></li>
+                            <li><a href="#">Drop menu 3</a></li>
+                            <li><a href="#">Drop menu 4</a></li>*@
+                            @Html.Action("DanhMucKPartial", "BanDienThoai")
+                        </ul>
+                    </li>
+
+
+                   @* <li>
+                        <a href="#" class="desktop-item">
+                            CÁC NHÃN HIỆU
+
+                        </a>
+                        <input type="checkbox" id="showMega">
+                        <label for="showMega" class="mobile-item">Mega Menu</label>*@
+                        @*<div class="mega-box">
+                <div class="content">
+                    <div class="row">
+                        <h3 style="text-align:center;">Hãng nổi bật</h3>
+                        <a href="#"><img src="~/Images/imges/adidas.png" alt="">ADIDAS</a>
+                        <a href="#"><img src="~/Images/imges/New Balance Vector Logo.png" alt="">NEW BALANCE</a>
+                        <a href="#"><img src="~/Images/imges/Nike decide deixar de vender seus produtos na Amazon.png" alt="">NIKE</a>
+                        <a href="#"><img src="~/Images/imges/puma.png" alt="">PUMA</a>
+                        <a href="#"><img src="~/Images/imges/Mens Under Armour Size Chart.png" alt="">UNDER ARMOUR</a>
+                    </div>
+                    <div class="row">
+                        <header>Design Services</header>
+                        <ul class="mega-links">
+                            <li><a href="#">Graphics</a></li>
+                            <li><a href="#">Vectors</a></li>
+                            <li><a href="#">Business cards</a></li>
+                            <li><a href="#">Custom logo</a></li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <header>Email Services</header>
+                        <ul class="mega-links">
+                            <li><a href="#">Personal Email</a></li>
+                            <li><a href="#">Business Email</a></li>
+                            <li><a href="#">Mobile Email</a></li>
+                            <li><a href="#">Web Marketing</a></li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <header>Security services</header>
+                        <ul class="mega-links">
+                            <li><a href="#">Site Seal</a></li>
+                            <li><a href="#">VPS Hosting</a></li>
+                            <li><a href="#">Privacy Seal</a></li>
+                            <li><a href="#">Website design</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>*@
+
+
+
+                    @*</li>*@
+
+                    <li>
+                        <a href="~/BanDienThoai/Danhmuckhuyenmai" class="desktop-item">
+                            <b>GIẢM GIÁ</b>
+                            @* <i class="fa fa-caret-down"></i>*@
+                        </a>
+                        <input type="checkbox" id="showMega">
+                        <label for="showMega" class="mobile-item">Mega Menu</label>
+                        @*<div class="mega-box">
+                <div class="content">
+                    <div class="row">
+                        <h3 style="text-align:center;">Hãng nổi bật</h3>
+                        <a href="#"><img src="~/Images/imges/adidas.png" alt="">ADIDAS</a>
+                        <a href="#"><img src="~/Images/imges/New Balance Vector Logo.png" alt="">NEW BALANCE</a>
+                        <a href="#"><img src="~/Images/imges/Nike decide deixar de vender seus produtos na Amazon.png" alt="">NIKE</a>
+                        <a href="#"><img src="~/Images/imges/puma.png" alt="">PUMA</a>
+                        <a href="#"><img src="~/Images/imges/Mens Under Armour Size Chart.png" alt="">UNDER ARMOUR</a>
+                    </div>
+                    <div class="row">
+                        <header>Design Services</header>
+                        <ul class="mega-links">
+                            <li><a href="#">Graphics</a></li>
+                            <li><a href="#">Vectors</a></li>
+                            <li><a href="#">Business cards</a></li>
+                            <li><a href="#">Custom logo</a></li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <header>Email Services</header>
+                        <ul class="mega-links">
+                            <li><a href="#">Personal Email</a></li>
+                            <li><a href="#">Business Email</a></li>
+                            <li><a href="#">Mobile Email</a></li>
+                            <li><a href="#">Web Marketing</a></li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <header>Security services</header>
+                        <ul class="mega-links">
+                            <li><a href="#">Site Seal</a></li>
+                            <li><a href="#">VPS Hosting</a></li>
+                            <li><a href="#">Privacy Seal</a></li>
+                            <li><a href="#">Website design</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>*@
+
+
+
+                    </li>
+
+
+                    @* <li><a href="#">Feedback</a></li>*@
+
+                    <li class="nav-links">
+                        @using (Html.BeginForm("Search", "Search", FormMethod.Get, new { @class = "navbar-form navbar-right", @role = "search" }))
+                        {
+                            <div class="search-icon">
+                                <input type="search" placeholder="Search" name="strSearch">
+                                <label class="icon">
+                                    <button type="submit" class="fas fa-search"></button>
+                                </label>
+                            </div>
+                        }
+                    </li>
+                    <li>
+                        @Html.Action("LoginLogout", "BanDienThoai")
+                    </li>
+                    <li>
+                        @Html.Action("GioHangPartial", "GioHang")
+                    </li>
+
+                </ul>
+            <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+
+           
+
+
+
+        </div>
+
+
+
+      
+
+
+    </nav>
+
+
+
+  
+
+
+    <div class="than1">
+        @RenderBody()
+    </div>
+
+
+
+
+
+
+  
+
+    <footer>
+        <div class="content">
+            <div class="top">
+                <div class="logo-details">
+                    <i class="fab fa-slack"></i>
+                    <span class="logo_name">NVN</span>
+                </div>
+                <div class="media-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="link-boxes">
+                <ul class="box">
+                    <li class="link_name">SẢN PHẨM</li>
+                    <li><a href="#">Giày</a></li>
+                    <li><a href="#">Quần áo</a></li>
+                    <li><a href="#">Phụ kiện</a></li>
+                    <li><a href="#">Hàng mới về</a></li>
+                    <li><a href="#">Release Dates</a></li>
+                    <li><a href="#">Member Exclusives</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">THỂ THAO</li>
+                    <li><a href="#">Chạy</a></li>
+                    <li><a href="#">Tập Luyện</a></li>
+                    <li><a href="#">Bóng Đá</a></li>
+                    <li><a href="#">Bóng Rổ</a></li>
+                    <li><a href="#">Quần Vợt</a></li>
+                    <li><a href="#">Bơi Lội</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">THÔNG TIN</li>
+                    <li><a href="#">Giới Thiệu Về Chúng Tôi</a></li>
+                    <li><a href="#">Cơ Hội Nghề Nghiệp</a></li>
+                    <li><a href="#">Tin Tức</a></li>
+                    <li><a href="#">Nhà Đầu Tư</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">HỖ TRỢ</li>
+                    <li><a href="#">Trợ Giúp Dịch Vụ</a></li>
+                    <li><a href="#">Công Cụ Tìm Kiếm</a></li>
+                    <li><a href="#">Thanh Toán</a></li>
+                    <li><a href="#">Giao Hàng</a></li>
+                    <li><a href="#">Trả Hàng & Hoàn Tiền</a></li>
+                    <li><a href="#">Khuyến Mãi</a></li>
+                </ul>
+                <ul class="box input-box">
+                    <li class="link_name">THAM GIA NGAY</li>
+                    <li><input type="text" placeholder="Email...."></li>
+                    <li><input type="button" value="ĐĂNG KÝ"></li>
+                </ul>
+            </div>
+        </div>
+       
+    </footer>
+
+
+
+</body>
+</html >

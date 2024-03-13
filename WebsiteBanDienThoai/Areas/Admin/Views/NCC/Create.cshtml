@@ -1,0 +1,80 @@
+﻿@model WebsiteBanDienThoai.Models.NCC
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin1.cshtml";
+}
+<style type="text/css">
+    .container a {
+        text-decoration: none;
+        color: dodgerblue;
+    }
+
+    .container img {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+</style>
+<
+<h2 style="text-align:center;">THÊM NHÀ CUNG CẤP</h2>
+<div class="container">
+@*Thêm thuộc tính cho form để upload ảnh*@
+@using (Html.BeginForm("Create", "NCC", FormMethod.Post, new
+{
+    @enctype =
+"multipart/form-data"
+}))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2">Tên nhà cung cấp:</label>
+            <div class="col-md-10">
+                <input type="text" size="70" name="sTenNCC" value="@ViewBag.TenNCC"
+                       required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Ảnh bìa:</label>
+            <div class="col-md-10">
+                <input type="file" name="fFileUpload" />
+
+                @*Thông báo lỗi yêu cầu phải chọn ảnh bìa*@
+                @ViewBag.ThongBao
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Địa chỉ:</label>
+            <div class="col-md-10">
+                <input type="text" size="70" name="sDiaChi" value="@ViewBag.DiaChi"
+                       required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Điện thoại:</label>
+            <div class="col-md-10">
+                <input type="text" size="70" name="sDienThoai" value="@ViewBag.DienThoai"
+                       required />
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Thêm mới" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+    @Html.ActionLink("VỀ TRANG QUẢN LÝ NCC", "Index")
+</div>

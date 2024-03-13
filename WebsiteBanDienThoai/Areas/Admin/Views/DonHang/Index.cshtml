@@ -1,0 +1,88 @@
+﻿@model IEnumerable<WebsiteBanDienThoai.Models.DONDATHANG>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin1.cshtml";
+}
+
+<style type="text/css">
+    .btnwarning {
+        background-size: auto;
+        background-color: #fbdd35;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btndanger {
+        background-size: auto;
+        background-color: #ff4040;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btnprimary {
+        background-size: auto;
+        background-color: #0094ff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+<div class="container">
+<h2 style="text-align:center;">QUẢN LÝ THÔNG TIN ĐƠN ĐẶT HÀNG</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Đã thanh toán
+        </th>
+        <th>
+           Tình trạng giao hàng
+        </th>
+        <th>
+          Ngày đặt
+        </th>
+        <th>
+           Ngày giao
+        </th>
+        <th>
+          Họ tên
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DaThanhToan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TinhTrangGiaoHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayGiao)
+                
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = item.MaDonHang })" class="btn btnwarning" role="button">Sửa</a>
+                <a href="@Url.Action("Details1", new { id = item.MaDonHang })" class="btn btnprimary" role="button">Chi tiết</a>
+                <a href="@Url.Action("Delete", new { id = item.MaDonHang })" class="btn btndanger" role="button">Xóa</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+</div>

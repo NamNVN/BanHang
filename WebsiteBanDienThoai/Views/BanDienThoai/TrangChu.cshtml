@@ -1,0 +1,296 @@
+﻿
+
+
+@{
+    ViewBag.Title = "TrangChu";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@*<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>*@
+
+
+
+
+<link rel="stylesheet" href="~/Content/css/trangchu.css" />
+
+
+<style type="text/css">
+
+    #carousel1 {
+        margin-bottom: 20px;
+    }
+    @*#kch img {
+        width: 300px;
+        height: 180px;
+    }
+
+
+    #mau {
+        background: red;
+    }
+
+    #hh1 {
+        background: red;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        height: 30px;
+        margin-bottom: 20px;
+        padding-top: 5px;
+    }
+
+    #carousel1 {
+        margin-bottom: 20px;
+    }
+
+    #kch a {
+        text-decoration: none;
+        color: black;
+    }
+
+        #kch a:hover {
+            color: black;
+        }
+
+    #main6 {
+        background: white;
+    }
+
+    #duoi1 img {
+        width: 100%;
+        height: 85px;
+    }
+
+    #duoi5 img {
+        padding-top: 10px;
+    }*@
+</style>
+
+
+
+<div id="carousel1" class="carousel slide">
+
+
+    <div class="carousel-inner">
+
+
+
+        <div class="item active">
+            <h3 style="text-align:center"> The Ultimate Sale: Up to 60% Off </h3>
+            <p style="text-align:center">Use code ULTIMATE to save 20% on select styles. Shop now. </p>
+            <div class="carousel-caption"></div>
+        </div>
+        <div class="item">
+            <h3 style="text-align:center"> Why Wait? Try Store Pickup </h3>
+            <p style="text-align:center">Buy online and find a store near you for pick up in less than 2 hours. Shop now. </p>
+            <div class="carousel-caption"></div>
+        </div>
+        <div class="item">
+            <h3 style="text-align:center"> Members: Free Shipping on Orders $50+ </h3>
+            <p style="text-align:center">Join Now </p>
+
+            <div class="carousel-caption"></div>
+        </div>
+
+
+
+    </div>
+
+    <a class="left carousel-control" href="#carousel1" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a> <a class="right carousel-control" href="#carousel1" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+
+</div>
+
+
+
+
+
+<div class="hero-image">
+    <div class="hero-text">
+        <h3 style="font-size:40px">
+            <b>
+                HÃY RÈN LUYỆN ĐỂ TRỞ <br>
+                THÀNH NGƯỜI GIỎI <br>
+                NHẤT CỦA BẠN
+            </b>
+        </h3>
+
+        <br>
+        <p>
+            Cảm giác trong ngày đua trên đường chạy tập luyện
+            <br>
+            của bạn, được hỗ trợ bằng công nghệ hiệu suất cao
+        </p>
+        <br>
+        <button>SHOP NOW</button>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div id="km1">
+        <div class="row">
+
+            <h2 style="color: black;text-align: center;margin-bottom:30px; "><b>Sản Phẩm Mới</b></h2>
+            @Html.Action("KMSPpartial", "BanDienThoai")
+
+
+
+        </div>
+        <hr />
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="hero-image3">
+    <div class="hero-text3">
+        <h3 style="font-size:50px"><b>20% OFF SELECT STYLES </b> </h3>
+        <p>
+            Members: Sign in and use code MEMBER20 to save 20% off
+            <br>
+            select styles. Exclusions apply.
+        </p>
+
+        <button>SĂN SALE</button>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div id="km1">
+        <div class="row">
+
+            @* <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">*@
+
+
+            <h2 style="padding-bottom:20px; padding-top:20px;"><b>Sản phẩm độc quyền</b></h2>
+            @Html.Action("PKNBpartial", "BanDienThoai")
+
+
+            @*</div>*@
+
+        </div>
+        <hr>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <h2 style="padding-bottom:20px;"><b>Tương lai</b></h2>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="hero-image1">
+                <div class="hero-text1">
+
+                    <p>Rep Your School</p>
+                    <h3>SWITCH FWD</h3>
+                    <button>MUA</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="hero-image2">
+                <div class="hero-text2">
+
+                    <p>New from Jordan Basketball</p>
+                    <h3>Featuring the Zion 3</h3>
+                    <button>MUA</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+</div>
+
+<div class="hero-image4">
+    <div class="hero-text4">
+        <h3 style="font-size:50px"><b>UNWRAP JOY </b> </h3>
+        <p>
+            GIFTS FOR THE WHOLE FAMILY
+        </p>
+        <br>
+        <button>GIFTS FOR HIM</button>
+        <button>GIFTS FOR HER</button>
+        <button>GIFTS FOR KID</button>
+    </div>
+</div>
+
+
+<div class="container">
+    <div id="km1">
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+                <h2 style="padding-bottom:20px;"><b>Khám phá PALERMO</b></h2>
+                @Html.Action("SPNBpartial", "BanDienThoai")
+
+
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2><b>WHO ARE YOU SHOPPING FOR?</b></h2>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <a href="#">
+                <img src="~/Images/imges/w1.png" style="width:100%; padding-bottom:10px;" />
+                <p>Men</p>
+            </a>
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <a href="#">
+                <img src="~/Images/imges/w2.png" style="width: 100%; padding-bottom: 10px;" />
+                <p>Woman</p>
+            </a>
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <a href="#">
+                <img src="~/Images/imges/w3.png" style="width: 100%; padding-bottom: 10px;" />
+                <p>Kid</p>
+            </a>
+
+        </div>
+
+
+    </div>
+    <hr />
+</div>
+
+
+
+

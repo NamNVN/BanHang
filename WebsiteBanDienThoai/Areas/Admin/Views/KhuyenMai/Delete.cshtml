@@ -1,0 +1,78 @@
+﻿@model WebsiteBanDienThoai.Models.KHUYENMAI
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin1.cshtml";
+}
+
+<
+<style type="text/css">
+    .container a {
+        text-decoration: none;
+        color: dodgerblue;
+    }
+</style>
+
+<style type="text/css">
+    .container a {
+        text-decoration: none;
+        color: dodgerblue;
+    }
+</style>
+<div class="container">
+    <h2 style="text-align:center;">XÁC NHẬN THÔNG TIN CẦN XÓA</h2>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mô tả:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            Giá bán:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaBan)
+        </dd>
+
+        <dt>
+            Phần trăm:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhanTram)
+        </dd>
+
+        <dt>
+            Ngày bắt đầu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBD)
+        </dd>
+
+        <dt>
+            Ngày kết thúc:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayKT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại trang quản lí khuyến mãi", "Index")
+        </div>
+    }
+</div>

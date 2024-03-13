@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+
+    @Scripts.Render("~/Scripts/js")
+    @Styles.Render("~/Content/css")
+    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <!--navbar-fixed-top-->
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navAdmin1" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">ADMIN</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navAdmin1">
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Index","SanPham")">QUẢN LÝ SẢN PHẨM</a></li>
+                    <li><a href="@Url.Action("Index","TieuDe")">QUẢN LÝ TIÊU ĐỀ</a></li>
+
+                    <li><a href="@Url.Action("Index","KhachHang")">QUẢN LÝ KHÁCH</a></li>
+                    <li><a href="@Url.Action("Index","DonHang")">QUẢN LÝ ĐƠN HÀNG</a></li>
+                    <li><a href="@Url.Action("Index","NCC")">QUẢN LÝ NCC</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   @* <div class="container">*@
+        @RenderBody()
+  @*  </div>*@
+    <footer class="container well">
+        <div class="row">
+            <div style="text-align:center;">
+                <p><a href="https://www.facebook.com/huynhphuthanh2907/" target="_blank" title="Click để vào trang cá nhân của Admin <3">NGUYỄN VĂN NAM</a></p>
+                <p>Điện thoại:<a href="" target="_blank" title="Liên hệ qua số điện thoại của Admin">0922002971</a></p>
+                <p>Email: <a href="" target="_blank" title="Liên hệ qua gmail của Admin">namcp9@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

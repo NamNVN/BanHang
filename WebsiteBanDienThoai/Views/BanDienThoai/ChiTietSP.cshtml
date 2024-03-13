@@ -1,0 +1,268 @@
+﻿@model WebsiteBanDienThoai.Models.SANPHAM
+@{
+    ViewBag.Title = "ChiTietSP";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<link rel="stylesheet" href="~/Content/css/chitietsp1.css" />
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="~/Content/css/style.css">
+<link rel="stylesheet" href="~/Content/css/trangchu.css" />
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <ul class="breadcrumb">
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li>@Model.TenSP</li>
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="main-wrapper">
+        <div class="container">
+            <div class="product-div">
+                <div class="product-div-left">
+                    <div class="img-container">
+                        <img src="~/Images/@Model.AnhBia" alt="watch">
+                    </div>
+                    <div class="hover-container">
+                        <div><img src="~/Images/@Model.AnhBia"></div>
+                        <div><img src="~/Images/@Model.AnhBia1"></div>
+                        <div><img src="~/Images/@Model.AnhBia2"></div>
+                        <div><img src="~/Images/@Model.AnhBia3"></div>
+
+
+                    </div>
+                </div>
+                <div class="product-div-right">
+                    <span class="product-name">@Model.TenSP</span>
+                    <div class="product-rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span>(@Model.DanhGia đánh giá)</span>
+                    </div>
+                    <span class="product-price">@Html.FormatValue(Model.GiaBan, "{0:#,##0}")đ</span>
+
+                   
+                 
+
+                        <p class="product-description">Màu sắc: </p>
+                        @* <button style="background-color: black; color: white; border: none; padding: 20px;
+                    font-size: 16px; text-align: center; text-decoration: none; display: inline-block; ">
+                Đen
+            </button>*@
+
+                        <button style="background-color: @Model.MauSac;  border: none; padding: 20px;
+                         display: inline-block; ">
+                        </button>
+
+                        <p class="product-description">Kích cỡ</p>
+                        <button style="background-color: black; color: white; border: none; padding: 15px;
+                        font-size: 16px; text-align: center; text-decoration: none; display: inline-block; ">
+                            @Model.KichThuoc
+                        </button>
+
+
+                        <div id="myNav" class="overlay">
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                            <div class="overlay-content">
+                                <img src="~/Images/kcn.png" />
+                                <img src="~/Images/kcnu.png" />
+                            </div>
+                        </div>
+
+                        <span style="font-size:16px;cursor:pointer;margin-top:20px;" onclick="openNav()"><i class="fa-solid fa-ruler"></i>&nbsp;<u>Hướng dẫn chọn kích thước </u> </span>
+
+                        <div class="btn-groups">
+                            <button type="button" class="add-cart-btn">
+                                <i class="fas fa-shopping-cart"></i><a style="text-decoration: none; color:black; " href="@Url.Action("ThemGioHang", "GioHang", new { ms = Model.MaSP, url = Request.Url.ToString() })" class="button">
+                                    Thêm vào giỏ hàng
+                                </a>
+                            </button>
+                            @* <button type="button" class="buy-now-btn"><i class="fas fa-wallet"></i>buy now</button>*@
+                        </div>
+
+
+
+
+
+
+                        <p class="product-description1"><i class='fas fa-truck'></i>&nbsp;&nbsp;Miễn phí giao hàng đơn từ 699k</p>
+                        <p class="product-description1"><i class="fa-solid fa-right-left"></i>&nbsp;&nbsp;Đổi trả miễn phí trong 30 ngày</p>
+                        <p class="product-description1"><i class="fa-solid fa-percent"></i>&nbsp;&nbsp;Trả góp 0% lãi suất từ 3.000.000 VNĐ</p>
+                        <p class="product-description1"><i class="fa-solid fa-money-check-dollar"></i>&nbsp;&nbsp;Thanh toán trực tuyến nhanh chóng và an toàn</p>
+                        <p class="product-description1"><i class="fa-solid fa-shirt"></i>&nbsp;&nbsp;Sản phẩm chính hãng 100%</p>
+
+                    </div>
+            </div>
+
+            <button class="accordion"><b>Mô tả sản phẩm</b><i class="fa-solid fa-plus"></i></button>
+            <div class="panel">
+                <p> @Html.Raw(Model.MoTa.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp"))</p>
+
+            </div>
+
+            <button class="accordion"><b>Quy định đổi trả </b><i class="fa-solid fa-plus"></i></button>
+            <div class="panel">
+                <p style="text-align:center;"><b>QUY ĐỊNH ĐỔI TRẢ HÀNG TẠI NVN</b></p>
+                <p style="color:red;">Lưu ý: Trong thời gian diễn ra chương trình khuyến mãi, thời gian giao hàng có thể kéo dài hơn so với dự kiến. Rất mong Quý khách thông cảm cho sự bất tiện này.</p>
+                <p><b>Sản phẩm áp dụng:</b> Tất cả sản phẩm được giao dịch tại Website NVN</p>
+                <p><b>Sản phẩm không áp dụng:</b> Đồ lót, đồ bơi, Phụ kiện,.... </p>
+                <p><b>Thời gian đổi trả hàng:</b> Trong vòng 30 ngày (đối với sản phẩm nguyên giá) và 10 ngày (đối với sản phẩm khuyến mãi) kể từ ngày khách hàng nhận được sản phẩm từ đơn vị vận chuyển.</p>
+            </div>
+
+            <button class="accordion"><b>Đánh giá (@Model.DanhGia) </b><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-star">&nbsp;&nbsp;</i>&nbsp;&nbsp;<i class="fas fa-star"></i>&nbsp;&nbsp;<i class="fas fa-star"></i>&nbsp;&nbsp;<i class="fas fa-star"></i></button>
+            <div class="panel">
+                <form action="action_page.php">
+
+                    <label for="fname">Họ Tên</label>
+                    <input type="text" id="fname" name="firstname" placeholder="">
+
+                    <label for="lname">Email</label>
+                    <input type="text" id="lname" name="lastname" placeholder="">
+
+                    <label for="country">Số điện thoại</label>
+                    <input type="text" id="lname" name="lastname" placeholder="">
+
+                    <label for="subject">Bình luận</label>
+                    <textarea id="subject" name="subject" placeholder="" style="height:200px"></textarea>
+
+                    <input type="submit" value="Gửi">
+
+                </form>
+            </div>
+
+            <hr>
+
+
+        </div>
+
+    </div>
+
+
+<script>
+    const allHoverImages = document.querySelectorAll('.hover-container div img');
+    const imgContainer = document.querySelector('.img-container');
+
+    window.addEventListener('DOMContentLoaded', () => {
+        allHoverImages[0].parentElement.classList.add('active');
+    });
+
+    allHoverImages.forEach((image) => {
+        image.addEventListener('mouseover', () => {
+            imgContainer.querySelector('img').src = image.src;
+            resetActiveImg();
+            image.parentElement.classList.add('active');
+        });
+    });
+
+    function resetActiveImg() {
+        allHoverImages.forEach((img) => {
+            img.parentElement.classList.remove('active');
+        });
+    }
+</script>
+
+
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+</script>
+
+
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="main5">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h2 style="padding-bottom:20px; padding-top:20px;"><b>Sản phẩm mới</b></h2>
+                @Html.Action("KMSPpartial", "BanDienThoai")
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+<div id="main5">
+    <div class="container">
+
+        <div class="row">
+
+
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h2 style="padding-bottom:20px; padding-top:20px;"><b>Khuyến mãi</b></h2>
+                @Html.Action("KHUYENMAIpartial", "BanDienThoai")
+
+
+            </div>
+
+
+        </div>
+        <hr>
+
+    </div>
+
+
+</div>
+
+
+
+

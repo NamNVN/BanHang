@@ -1,0 +1,124 @@
+﻿@model IEnumerable<WebsiteBanDienThoai.Models.KHACHHANG>
+@using WebsiteBanDienThoai.Models
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin1.cshtml";
+}
+
+<style type="text/css">
+    .btnwarning {
+        background-size: auto;
+        background-color: #fbdd35;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btndanger {
+        background-size: auto;
+        background-color: #ff4040;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btnprimary {
+        background-size: auto;
+        background-color: #0094ff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btnadd {
+        background-color: LightSalmon;
+        color: white;
+        padding: 8px 17px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+
+    .container a {
+        text-decoration: none;
+        color: white;
+    }
+</style>
+
+<h2 style="text-align:center;">QUẢN LÝ THÔNG TIN KHÁCH HÀNG</h2>
+
+<div class="container">
+    <p>
+        <a href="@Url.Action("Create")" class="btnadd" role="button">Tạo mới</a>
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Họ tên
+            </th>
+            <th style="width:100px;">
+                Tài khoản
+            </th>
+            <th style="width:100px;">
+                Mật khẩu
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                Điện thoại
+            </th>
+            <th>
+                Ngày sinh
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoTen)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaiKhoan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MatKhau)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DienThoai)
+                </td>
+                <td style="width:100px;">
+                    @Html.DisplayFor(modelItem => item.NgaySinh)
+
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = item.MaKH })" class="btn btnwarning" role="button">Sửa</a>
+                    <a href="@Url.Action("Details", new { id = item.MaKH })" class="btn btnprimary" role="button">Chi tiết</a>
+                    <a href="@Url.Action("Delete", new { id = item.MaKH })" class="btn btndanger" role="button">Xóa</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

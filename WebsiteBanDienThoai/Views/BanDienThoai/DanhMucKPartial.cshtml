@@ -1,0 +1,133 @@
+﻿@model IEnumerable<WebsiteBanDienThoai.Models.NCC>
+
+
+@*<style>
+    *{
+        padding:0;
+        margin:0;
+    }
+
+    ul {
+        list-style:none;
+        
+    }
+
+    ul li{
+        display:inline-block;
+        position:relative;
+    }
+
+    ul li p{
+        display:block;
+        
+        color:black;
+        text-decoration:none;
+        text-align:center;
+
+        
+        
+    }
+
+    ul li ul.dropdown li {
+        display:block;
+        z-index:999;
+        width:100%;
+
+    }
+
+    ul li ul.dropdown{
+        width:150px;
+        
+        position:absolute;
+        z-index:999;
+        display:none;
+    }
+
+    ul li a:hover{
+        
+    }
+
+    ul li:hover ul.dropdown {
+        display:block;
+    }
+
+    ul li p span.glyphicon-menu-hamburger {
+        font-size: 30px;
+        width:50px; 
+        padding:3px;
+        background:gray;
+        border-radius:10px;
+        color:white;
+        top:7px;
+        
+    }
+
+        ul li a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            ul li a span.glyphicon-home {
+                font-size: 20px;
+                padding: 5px;
+                padding-left: 20px;
+                text-decoration: none;
+            }
+
+            ul li a:hover{
+                color:black;
+            }
+
+
+
+    
+</style>
+
+<ul>
+
+    <li>
+        <p>
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+
+        </p>
+
+
+
+        <ul class="dropdown">
+            <li>
+                @foreach (var item in Model)
+                {
+
+                    <a href="@Url.Action("Danhmucsanpham","BanDienThoai", new { iMaCD = item.MaCD})"
+                       class="list-group-item">@item.TenChuDe</a>
+                }
+            </li>
+        </ul>
+    </li>
+
+
+    <li>
+        <a style="text-decoration: none" href="~/BanDienThoai/TrangChu">
+            <span class="glyphicon glyphicon-home"></span>Trang Chủ
+
+        </a>
+    </li>
+
+    
+
+
+</ul>
+*@
+
+<li>
+    @* <li id="dmsp" class="list-group-item active" style="font-weight:bold; text-align:center">DANH MỤC SẢN PHẨM</li>*@
+    @foreach (var item in Model)
+    {
+
+    
+    <a href="@Url.Action("DanhmucsanphamNCC","BanDienThoai", new { iMaNCC = item.MaNCC})"><img src="~/Images/@item.AnhBia" /> @item.TenNCC</a>
+    }
+</li>

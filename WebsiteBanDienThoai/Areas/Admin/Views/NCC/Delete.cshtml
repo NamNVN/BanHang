@@ -1,0 +1,66 @@
+﻿@model WebsiteBanDienThoai.Models.NCC
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin1.cshtml";
+}
+<style type="text/css">
+    .container a {
+        text-decoration: none;
+        color: dodgerblue;
+    }
+    .container img {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+</style>
+
+
+<h2 style="text-align:center;">XÁC NHẬN THÔNG TIN CẦN XÓA</h2>
+<div class="container">
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+          Tên nhà cung cấp:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNCC)
+        </dd>
+
+        <dt>
+          Địa chỉ:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+           Điện thoại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DienThoai)
+        </dd>
+
+        <dt>
+           Ảnh bìa:
+        </dt>
+
+        <dd>
+            <img src="~/Images/@Model.AnhBia" alt="@Model.TenNCC">
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Trở lại trang nhà cung cấp", "Index")
+        </div>
+    }
+</div>

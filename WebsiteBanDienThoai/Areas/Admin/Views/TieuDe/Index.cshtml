@@ -1,0 +1,118 @@
+﻿@using WebsiteBanDienThoai.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<WebsiteBanDienThoai.Models.TIEUDE>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin1.cshtml";
+}
+
+<style type="text/css">
+    .btnwarning {
+        background-size: auto;
+        background-color: #fbdd35;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btndanger {
+        background-size: auto;
+        background-color: #ff4040;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btnprimary {
+        background-size: auto;
+        background-color: #0094ff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btnadd {
+        background-color: LightSalmon;
+        color: white;
+        padding: 8px 17px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+
+    .container a{
+        text-decoration:none;
+        color:white;
+
+    }
+</style>
+
+
+<h2 style="text-align:center;">QUẢN LÝ THÔNG TIN TIÊU ĐỀ</h2>
+<div class="container">
+
+<p>
+    <a href="@Url.Action("Create")" class="btnadd" role="button">Tạo mới</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.TenChuDe)*@
+            Tên chủ đề
+        </th>
+
+        <th>
+            @*@Html.DisplayNameFor(model => model.TenChuDe)*@
+            Tên phụ
+        </th>
+        <th style="text-align:center;">
+            Mã sản xuất
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenChuDe)
+                
+            </td>
+
+             <td>
+                @Html.DisplayFor(modelItem => item.TenPhu)
+                
+            </td>
+
+            <td style="text-align:center;">
+                @Html.DisplayFor(modelItem => item.MaSX)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = item.MaCD })" class="btn btnwarning" role="button">Sửa</a>
+                <a href="@Url.Action("Details", new { id = item.MaCD })" class="btn btnprimary" role="button">Chi tiết</a>
+                <a href="@Url.Action("Delete", new { id = item.MaCD })" class="btn btndanger" role="button">Xóa</a>
+            </td>
+        </tr>
+    }
+
+</table>
+@*Tạo iên kết phần trang*@
+@*Trang @(Model.PageCount < Model.PageNumber ? 0 :
+Model.PageNumber)/@Model.PageCount*@
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+
+</div>
+<style>
+    .MenuTrang {
+        display: inline;
+        text-align: center;
+    }
+</style>

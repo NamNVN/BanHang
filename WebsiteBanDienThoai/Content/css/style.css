@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/*Duong dan link*/
+
+#main5 {
+    background-color: #f1f1f1;
+}
+
+ul {
+    list-style: none;
+}
+
+
+ul li a {
+        color: black;
+        text-decoration: none;
+        /* text-align: center;*/
+        text-decoration: none;
+    }
+
+
+
+   
+
+
+
+    ul.breadcrumb {
+        padding: 10px 16px;
+        list-style: none;
+        background-color: white;
+    }
+
+        /* Display list items side by side */
+        ul.breadcrumb li {
+            display: inline;
+            font-size: 18px;
+        }
+
+            /* Add a slash symbol (/) before/behind each list item */
+            ul.breadcrumb li + li:before {
+                padding: 8px;
+                color: black;
+                content: "/\00a0";
+            }
+
+            /* Add a color to all links inside the list */
+            ul.breadcrumb li a {
+                /*  color: #0275d8;*/
+                text-decoration: none;
+            }
+
+                /* Add a color on mouse-over */
+                ul.breadcrumb li a:hover {
+                    color: black;
+                    text-decoration: underline;
+                }
+
+/** {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+}*/
+
+.main-wrapper img {
+    width: 100%;
+    display: block;
+}
+
+.main-wrapper .row{
+    background:white;
+}
+
+.main-wrapper {
+    min-height: 100vh;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.main-wrapper .container {
+    max-width: 1200px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+.product-div {
+    margin: 1rem 0;
+   /* padding: 2rem 0;*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #fff;
+    border-radius: 3px;
+    column-gap: 10px;
+}
+
+.product-div-left {
+    padding: 20px;
+}
+
+.product-div-right {
+    padding: 20px;
+}
+
+.img-container img {
+    width: 700px;
+    height:700px;
+    margin: 0 auto;
+}
+
+.hover-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+    .hover-container div {
+        border: 2px solid rgba(252, 160, 175, 0.7);
+        padding: 1rem;
+        border-radius: 3px;
+        margin: 0 4px 8px 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+.active {
+    border-color: rgb(255, 145, 163) !important;
+}
+
+.hover-container div:hover {
+    border-color: rgb(255, 145, 163);
+}
+
+.hover-container div img {
+    width: 50px;
+    cursor: pointer;
+}
+
+.product-div-right span {
+    display: block;
+}
+
+.product-name {
+    font-size: 26px;
+    margin-bottom: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.product-price {
+    font-weight: 700;
+    font-size: 24px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom:20px;
+}
+
+    .product-rating span {
+        margin-right: 6px;
+    }
+
+.product-description {
+    font-weight: 18px;
+    line-height: 1.6;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-top: 22px;
+}
+
+
+
+.product-description1 {
+    font-weight: 18px;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-top: 0px;
+}
+
+.btn-groups {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+    .btn-groups button {
+        display: inline-block;
+        font-size: 16px;
+        font-family: inherit;
+        text-transform: uppercase;
+        padding: 15px 16px;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .btn-groups button .fas {
+            margin-right: 8px;
+        }
+
+.add-cart-btn {
+    background-color: #FF9F00;
+    border: 2px solid #FF9F00;
+    margin-right: 8px;
+}
+
+    .add-cart-btn:hover {
+        background-color: #fff;
+        color: #FF9F00;
+    }
+
+.buy-now-btn {
+    background-color: #000;
+    border: 2px solid #000;
+}
+
+    .buy-now-btn:hover {
+        background-color: #fff;
+        color: #000;
+    }
+
+@media screen and (max-width: 992px) {
+    .product-div {
+        grid-template-columns: 100%;
+    }
+
+    .product-div-right {
+        text-align: center;
+    }
+
+    .product-rating {
+        justify-content: center;
+    }
+
+    .product-description {
+        max-width: 400px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .btn-groups button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+.overlay {
+    height:100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    /*margin-top: 30px;*/
+}
+
+.overlay img {
+    
+    padding:5%;
+    width: 1500px;
+    text-align: center;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+    /*.overlay a:hover, .overlay a:focus {
+        color: #f1f1f1;
+    }*/
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+
+
+.accordion {
+    background-color: white;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    
+    
+      
+   
+}
+
+.accordion i {
+    float:right;
+}
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .accordion:hover {
+        background-color: #ccc;
+    }
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+   
+}
+
+
+
+
+.panel input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding:12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+    
+}
+
+/* Style the submit button with a specific background color etc */
+.panel input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    /* When moving the mouse over the submit button, add a darker green color */
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+
+
+
+

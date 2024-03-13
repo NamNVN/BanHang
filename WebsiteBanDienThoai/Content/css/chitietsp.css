@@ -1,0 +1,263 @@
+﻿/*.button {
+    background-color: orangered;
+    border-radius: 5px;
+    color: white;
+    /padding: 15px 32px;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin: 0px 0px;
+    cursor: pointer;
+    width: 400px;
+    margin-bottom: 20px;
+}
+*/
+#main3 a:hover {
+    color: white;
+    background-color: #ffd800;
+    transition-duration: 3s;
+    
+}
+
+
+
+
+/*.addtocart {
+    background-color: red;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.addtocart span {
+    width: 300px;
+    height: 40px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+*/
+
+
+/*.giaban span {
+    color: red;
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+
+.motasach p {
+    font-size: 15px;
+}
+
+.motasach h4 {
+    font-size: 30px;
+    background: red;
+    width: 250px;
+    height: 50px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    padding-top: 10px;
+    color: white;
+}
+
+
+.motasach1 h3 {
+    font-size: 30px;
+    padding-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    height: 50px;
+}
+
+
+.motasach1 p {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+    .motasach1 p a {
+        text-decoration: none;
+        color: black;
+    }
+
+.motasach1 a:hover {
+    color: black;
+}
+
+.motasach1 img {
+    width: 100px;
+    height: 50px;
+    padding: 5px 10px;
+}
+
+p span {
+    font-size: 100px;
+    color: #808080;
+}
+
+.aa img {
+    padding-top: 70px;
+}
+
+.bb {
+    width: 350px;
+    height: 350px;
+    padding:3px 1px;
+    
+}
+
+ 
+.tensach {
+}
+
+.ct {
+    width: 300px;
+    height: 100px;
+}
+
+
+
+
+#km {
+    margin-bottom: 20px;
+    width: 400px;
+    border: solid;
+    border-color: red;
+    height: 190px;
+}
+
+#km p {
+    font-size: 20px;
+    background: red;
+    color: #FFF;
+    text-align: center;
+}
+
+#km ul {
+    width: 380px;
+    list-style: none;
+    margin-top: 10px;
+    padding-left: 5px;
+}
+
+    #km ul li {
+        color: #000;
+        margin-top: 5px;
+    }
+
+        #km ul li i {
+            color: orange;
+        }
+
+.ok {
+    width: 30px;
+}
+
+#main3 {
+    background: white;
+    margin-bottom: 10px;
+}
+
+#main4 {
+    background: white;
+    margin-bottom: 10px;
+}
+
+
+
+
+#cs {
+    margin-top: 20px;
+    border: solid;
+    border-color: #0C0;
+    height: 130px;
+}
+
+    #cs p {
+        font-size: 20px;
+        background: #0C0;
+        color: #FFF;
+        text-align: center;
+    }
+
+    #cs ul li img {
+        width: 20px;
+        height: 20px;
+    }
+
+#main5 {
+    margin-bottom: 10px;
+    background: white;
+}*/
+
+
+ul {
+    list-style: none;
+}
+
+    /*ul li {
+        display: inline-block;
+        @* position: relative;
+        *@
+    }
+
+        ul li p {
+            display: block;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }*/
+
+        ul li a {
+           
+            color: black;
+            text-decoration: none;
+           /* text-align: center;*/
+            text-decoration: none;
+        }
+
+
+
+            /*ul li a:hover {
+                color: black;
+            }
+*/
+
+
+
+    ul.breadcrumb {
+        padding: 10px 16px;
+        list-style: none;
+        background-color: white;
+    }
+
+        /* Display list items side by side */
+        ul.breadcrumb li {
+            display: inline;
+            font-size: 18px;
+        }
+
+            /* Add a slash symbol (/) before/behind each list item */
+            ul.breadcrumb li + li:before {
+                padding: 8px;
+                color: black;
+                content: "/\00a0";
+            }
+
+            /* Add a color to all links inside the list */
+            ul.breadcrumb li a {
+              /*  color: #0275d8;*/
+                text-decoration: none;
+            }
+
+                /* Add a color on mouse-over */
+                ul.breadcrumb li a:hover {
+                    color: black;
+                    text-decoration: underline;
+                }
+
+
+
+
+

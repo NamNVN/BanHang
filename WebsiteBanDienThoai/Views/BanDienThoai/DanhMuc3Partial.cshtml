@@ -1,0 +1,21 @@
+﻿@model IEnumerable<WebsiteBanDienThoai.Models.TIEUDE>
+
+@*<ul class="list-group">
+        <li id="dmsp" class="list-group-item active" style="font-weight:bold; text-align:center">DANH MỤC SẢN PHẨM</li>
+        @foreach (var item in Model)
+        {
+
+            <a href="@Url.Action("Danhmucsanpham","BanDienThoai", new { iMaCD = item.MaCD})"
+               class="list-group-item">@item.TenChuDe</a>
+        }
+    </ul>
+*@
+
+<li>
+    @* <li id="dmsp" class="list-group-item active" style="font-weight:bold; text-align:center">DANH MỤC SẢN PHẨM</li>*@
+    @foreach (var item in Model)
+    {
+
+        <a href="@Url.Action("Danhmucsanpham","BanDienThoai", new { iMaCD = item.MaCD})">@item.TenChuDe</a>
+    }
+</li>

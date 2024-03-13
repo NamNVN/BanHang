@@ -1,0 +1,54 @@
+﻿@model WebsiteBanDienThoai.Models.TIEUDE
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin1.cshtml";
+}
+
+
+<style type="text/css">
+    .container a {
+        text-decoration: none;
+        color: dodgerblue;
+    }
+</style>
+    <div class="container">
+        <h2 style="text-align:center;">XÁC NHẬN THÔNG TIN CẦN XÓA</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Tên chủ đề:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenChuDe)
+            </dd>
+
+            <dt>
+                Tên phụ:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenPhu)
+            </dd>
+
+            <dt>
+                Mã sản xuất:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaSX)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("VỀ TRANG QUẢN LÝ CHỦ ĐỀ", "Index")
+            </div>
+        }
+    </div>

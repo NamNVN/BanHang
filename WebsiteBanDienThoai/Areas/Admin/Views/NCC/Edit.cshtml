@@ -1,0 +1,83 @@
+﻿@model WebsiteBanDienThoai.Models.NCC
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin1.cshtml";
+}
+
+<style type="text/css">
+    .container a {
+        text-decoration: none;
+        color: dodgerblue;
+    }
+</style>
+
+<div class="container">
+
+<h2 style="text-align:center;">ĐIỀU CHỈNH THÔNG TIN NCC</h2>
+@*thêm thuộc tính cho form để up ảnh*@
+@using (Html.BeginForm("Edit", "NCC", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Mã sản phẩm:</label>
+            <div class="col-md-10">
+                <input type="text" size="70" name="iMaNCC" value="@Model.MaNCC" readonly />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Tên sản phẩm:</label>
+            <div class="col-md-10">
+                <input type="text" size="70" name="sTenNCC" value="@Model.TenNCC"
+                       required />
+            </div>
+        </div>
+       
+        <div class="form-group">
+            <label class="control-label col-md-2">Ảnh bìa:</label>
+            <div class="col-md-10">
+                <input type="file" name="fFileUpload" />
+                <img src="~/Images/@Model.AnhBia" style="width:120px;" />
+
+            </div>
+        </div>
+
+       
+
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Địa chỉ:</label>
+            <div class="col-md-10">
+                <input type="text" size="70" name="sDiaChi" value="@Model.DiaChi"
+                       required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Điện thoại:</label>
+            <div class="col-md-10">
+                <input type="text" size="70" name="sDienThoai" value="@Model.DienThoai"
+                       required />
+            </div>
+        </div>
+
+      
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="LƯU THÔNG TIN" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+}
+
+
+    @Html.ActionLink("VỀ TRANG QUẢN LÝ SẢN PHẨM", "Index")
+</div>

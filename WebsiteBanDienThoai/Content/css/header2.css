@@ -1,0 +1,209 @@
+﻿
+
+
+.imgbook {
+    transition: all 1s ease-in;
+    width: 300px;
+}
+
+    .imgbook:hover {
+        transform: scale(0.9);
+        cursor: pointer;
+    }
+
+.imgsachbannhieu {
+    width: 100px;
+}
+
+
+div#hh {
+    height: 15px;
+    width: 100%;
+    background: #CCC;
+    margin: 0 auto;
+}
+
+    div#hh p {
+        color: #F00;
+    }
+
+#bt {
+    padding-top: 1px;
+}
+
+
+
+#bc {
+    display: block;
+    float: left;
+    width: 325px;
+    margin: auto;
+}
+
+    #bc img {
+        width: 325px;
+        height: 150px;
+        margin-left: auto;
+    }
+
+#bb {
+    display: block;
+    float: right;
+    margin: auto;
+}
+
+    #bb img {
+        width: 325px;
+        height: 150px;
+        margin-right: auto;
+    }
+
+#tren {
+    padding-top: 5px;
+}
+
+#duoi {
+    padding-top: 5px;
+}
+
+#duoi1 {
+    padding-top: 5px;
+    width: 100%;
+}
+
+    #duoi1 img {
+        border-radius: 5px;
+    }
+
+
+
+
+#dmsp {
+    background-color: darkgray;
+    z-index: 1;
+    border-color: darkgray;
+}
+
+#logo img {
+    width: 80px;
+    height: 65px;
+}
+
+#kc {
+    width: 400px;
+}
+
+.fb {
+    color: #30F;
+}
+
+.yt {
+    color: #F00;
+}
+
+.dt {
+    color: #CF0;
+}
+
+img#bn1 {
+    width: 1200px;
+    height: 360px;
+}
+
+img#br {
+    width: 100%;
+    z-index: 5;
+    position: relative;
+}
+
+.pc {
+    width: 100%;
+    background-color: gainsboro;
+    height: 270px;
+    text-align: center;
+}
+
+#header {
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+}
+
+
+
+
+
+
+body {
+    background: #EEEEEE;
+}
+
+
+
+
+
+
+
+
+#cuoi2 {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: fixed;
+    z-index: 5;
+    right: 50px;
+    top: 450px;
+}
+
+    #cuoi2 img {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+   
+/*.search-bar {
+   
+    width: 100px;
+    background: red;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px 10px;
+    /backdrop-filter:blur(4px) saturate(180%);
+}
+*/
+/*    .search-bar input {
+        background: white;
+        flex: 1;
+        border: 0;
+        outline: none;
+        padding: 5px 10px;
+        font-size: 20px;
+        / color:#cac7ff;
+    }*/
+
+
+/*::placeholder {
+    / color:#cac7ff;
+}
+
+
+.search-bar button image {
+    width: 25px;
+}
+
+.search-bar button {
+    border: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}*/
+
+#navbar1 li {
+    font-size: 15px;
+    top: 10px;
+}
+
+
+

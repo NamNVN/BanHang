@@ -1,0 +1,147 @@
+﻿@using WebsiteBanDienThoai.Models
+
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<style type="text/css">
+    #dh {
+        
+       padding-left:70px;
+    }
+    #dh td {
+        padding-left:10px;
+      
+    }
+    #main8{
+        background:white;
+        margin-bottom:10px;
+    }
+
+    
+    #dh a{
+        text-decoration:none;
+        color:black;
+
+    }
+
+    .button {
+        background-color: #FF0000;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin-right:70px;
+    }
+    .button a{
+        text-decoration:none;
+        color:white
+    }
+
+
+ </style>
+<div class="container">
+    <div id="main8">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+            <h2 style="text-align:center">GIỎ HÀNG</h2>
+            <hr>
+
+            <div id="dh">
+            <table border="0" >
+                <tr style=" font-size: 15px; font-weight: bold; text-align: center; ">
+                    @*<td>Mã Sản Phẩm</td>*@
+
+                    <td align="left">Sản Phẩm </td>
+                    <td></td>
+                    <td>Số Lượng</td>
+                    <td>Đơn Giá</td>
+                    <td>Thành Tiền</td>
+                   @* <td></td>*@
+                    <td>Thao Tác</td>
+
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                       @* <td align="center">@item.iMaSP</td>*@
+                        <td>
+                            <img src="~/Images/@item.sAnhBia" style="width:150px;" />
+                        </td>
+                        <td width="400px"><a href="@Url.Action("ChiTietSP","BanDienThoai", new { id =item.iMaSP})">@item.sTenSP</a>
+                           
+                        </td>
+                        @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { iMaSP = item.iMaSP }))
+                        {
+                            <td align="center"><input type="number" min="1" name="txtSoLuong" value="@item.iSoLuong" style=" width: 50px;" />
+                                               <input class="w3-button w3-light-blue" type="submit" value="Cập nhật" />
+                            </td>
+                            <td align="center" width="100px">@string.Format("{0:#,##0,0}", @item.dDonGia) đ</td>
+                            <td align="center" width="100px">@string.Format("{0:#,##0,0}", @item.dThanhTien) đ</td>
+                            @*<td align="center" ><a href="@Url.Action("ChiTietSP","BanDienThoai", new { id =item.iMaSP})">Chi tiết</a></td>*@
+                            <td align="center" width="100px"><a>@Html.ActionLink("Xóa", "XoaSPKhoiGioHang", new { @iMaSP = item.iMaSP })</a></td>
+                           @* <td><input class="w3-button w3-light-blue" type="submit" value="Cập nhật" /></td> *@
+                        }
+                    </tr>
+                }
+
+
+               @* <tr>
+                    <td colspan="4" style="text-align:right;  font-weight:bold; padding-right:5px; color:red;">
+                        Tổng số lượng : @string.Format("{0:#,##0}", ViewBag.TongSoLuong)
+                    </td>
+                    <td colspan="5" style="text-align:right;  font-weight:bold;color:red;">
+                        Tổng tiền : @string.Format("{0:#,##0}", ViewBag.TongTien)
+                    </td>*@
+
+
+                <tr style="font-weight:bold; color:red; text-align:right;">
+                    <td class="bt1" colspan="9"><button class="w3-button w3-red"> @Html.ActionLink("Xóa giỏ hàng", "XoaHetGioHang")</button></td>
+                </tr>
+               @* <tr style="font-weight:bold; color:red; text-align:center;">
+                    <td colspan="9"><button class="w3-button w3-red">@Html.ActionLink("ĐẶT HÀNG", "DatHang", "GioHang")</button></td>
+                </tr>*@
+            </table>
+                </div>
+            <hr>
+</div>
+        
+</div>
+    
+</div>
+    </div>
+
+<div class="container">
+    <div id="main8">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+                <p style="text-align:right;  color:red">
+                    Tổng thanh toán  (@string.Format("{0:#,##0}", ViewBag.TongSoLuong) Sản phẩm ): @string.Format("{0:#,##0}", ViewBag.TongTien) đ
+                    <button class="button">@Html.ActionLink("ĐẶT HÀNG", "DatHang", "GioHang")</button>
+                </p>
+                @*<a href="/GioHang/PaymentWithPayPal?" class="btn btn-success">Thanh toán bằng paypal </a>*@
+
+
+
+                @*  <button class="w3-button w3-red"> @Html.ActionLink("Xóa giỏ hàng", "XoaHetGioHang")</button>
+
+        <button class="w3-button w3-red">@Html.ActionLink("ĐẶT HÀNG", "DatHang", "GioHang")</button>
+                *@
+
+
+                <hr>
+            </div>
+        
+</div>
+    
+</div>
+    </div>
